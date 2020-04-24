@@ -47,4 +47,26 @@ class LinkedList:
 
     def reverse_list(self, node, prev):
         # You must use recursion for this solution
-        pass
+
+        # If the list is empty, return none:
+        if node == None:
+            return None
+
+        # Base Case
+        # If the node is at the tail, return the node once head is set to the tail:
+        if node.next_node == None:
+            self.head = node
+            return node
+
+        # Use the temporary node as the receiver of the scope's next node
+        temp_Node = self.reverse_list(node.next_node, node)
+
+        # Reverse the order:
+        temp_Node.next_node = node
+
+        # Tail should be set to none
+        node.next_node = None
+        return node
+
+
+
