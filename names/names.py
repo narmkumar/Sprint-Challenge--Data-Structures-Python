@@ -44,7 +44,7 @@ for name2 in names_2:
     if bst.contains(name2):
         duplicates.append(name2)
 
-# Run time: O(n) - 0.103 seconds
+# Run time: O(n(log(n))) - 0.103 seconds
 
 
 end_time = time.time()
